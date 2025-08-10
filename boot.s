@@ -10,10 +10,11 @@
 .global start
 .global _start
 
-/* stack (4KB) */
 .bss
-.comm stack, 4096
-.set STACK_TOP, stack + 4096
+.align 16
+stack:
+    .skip 4096              # allocate 4KB for stack
+stack_top:
 
 .text
 start:
@@ -26,8 +27,8 @@ start:
     movw %ax, %gs
     movw %ax, %ss
 
-    /* set stack */
-    movl $STACK_TOP, %esp
+    /* set stack pointer */
+    movl $stack_top, %esp
 
     /* call C kernel entry */
     call kernel_main
