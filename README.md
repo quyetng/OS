@@ -15,3 +15,7 @@ make
 sudo apt update
 sudo apt install xorriso
 make
+
+2.c.
+make
+qemu-system-i386 -cdrom os.iso
