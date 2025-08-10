@@ -10,3 +10,8 @@ qemu-system-i386 -cdrom os.iso
 sudo apt update
 sudo apt install build-essential gcc-multilib
 make
+
+2.b.
+sudo apt update
+sudo apt install xorriso
+make
