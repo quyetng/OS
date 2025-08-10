@@ -1,8 +1,12 @@
 # Makefile (uses i686-elf GCC cross-toolchain)
-CC=i686-elf-gcc
-LD=i686-elf-ld
-AS=i686-elf-as
-OBJCOPY=i686-elf-objcopy
+# CC=i686-elf-gcc
+# LD=i686-elf-ld
+# AS=i686-elf-as
+# OBJCOPY=i686-elf-objcopy
+CC=gcc -m32
+LD=ld -m elf_i386
+AS=as --32
+OBJCOPY=objcopy
 CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra -fno-stack-protector -m32
 LDFLAGS = -nostdlib -T linker.ld
 

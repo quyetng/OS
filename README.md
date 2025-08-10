@@ -5,3 +5,8 @@ qemu-system-i386, grub-pc-bin / grub2-common (for grub-mkrescue), and a cross-co
 2. 
 make
 qemu-system-i386 -cdrom os.iso
+
+2.a.
+sudo apt update
+sudo apt install build-essential gcc-multilib
+make
